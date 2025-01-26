@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+        }
+      }
+    </script>
+
+    <meta charset="utf-8">
+    <title>GeneLang</title>
+    <link rel="icon" type="image/x-icon" href="/static/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <script defer type="module" src="spotlight_script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Major+Mono+Display&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <canvas id="myCanvas"></canvas>
+    <div class="wrapper">
+      <header>
+        <div class="topbar">
+          <a href="./index.html">
+          </a>
+          <nav>
+            <div class="stick">
+              <img id="brain">
+            </div>
+
+          </nav>
+        </div>
+
+
+
+      </header>
+
+      <div class="body">
+        <div id="navlinks">
+          <a href="./index.html">Home</a>
+          <a href="spotlight.html">Documentation</a>
+          <a href="installation.html">Installation</a>
+        </div>
+
+        <main class="spot-container">
+          <div class="research">
+            <h1>Documentation</h1>
+            <div class="bound-box">
+
+              <div class="articles">
+
+                <div class="article" id="one">
+                   <h2>Version 0.0.1</h2>
+                    <h3>N/A (Test)</h3>
+                </div>
+
+                <div class="article" id="two">
+                  <h2>Version 0.0.2</h2>
+                   <h3>Features</h3>
+                   <p>
+                   ○ Load and Manage Sequences: Load DNA or RNA sequences from files and view sequence information. <br>
+                   ○ Manipulate Sequences: Reverse, complement, transcribe, and translate sequences. <br>
+                   ○ Simulate Genetic Variations: Introduce single nucleotide polymorphisms (SNPs), mutations, and trim sequences. <br>
+                   ○ Analyze Sequences: Calculate nucleotide composition, align sequences, and compute similarity scores. <br>
+                   ○ Annotate Sequences: Add annotations to specific positions within sequences. <br>
+                   ○ Pattern Matching: Filter sequences by searching for specific patterns. <br>
+                   ○ Random Sequence Generation: Generate random DNA sequences of a specified length. <br>
+                   ○ Domain Prediction: Predict functional domains within sequences based on known patterns. <br>
+                   </p>
+                   <h3>Usage</h3>
+                   Integrates with the Command Palette. <br>
+                   ○ Create a file with the .bio extension <br>
+                   ○ Type the desired commands (one per line) into the document. <br>
+                   ○ Press Ctrl+Shift+P (or Cmd+Shift+P on macOS) to open the command palette. <br>
+                   ○ Type Evaluate Modela and select the command to run the GeneLang code in the document. <br>
+                   ○ Results and outputs will appear as notifications within Visual Studio Code. <br>
+                   <h3>Commands</h3>
+                   <pre><code>load sequence from "filename.extension"</code></pre>
+                   <p>○ Loads a DNA or RNA sequence from a specified file. The file should be in the same directory as the workspace.</p>
+
+                   <pre><code>show info</code></pre>
+                   <p>○ Displays the header and the first 200 bases of the currently loaded sequence.</p>
+
+                   <pre><code>show composition</code></pre>
+                   <p>○ Displays nucleotide composition.</p>
+
+                   <pre><code>reverse sequence</code></pre>
+                   <p>○ Reverses the sequence.</p>
+
+                   <pre><code>complement DNA</code></pre>
+                   <p>○ Generates the complement of the DNA sequence.</p>
+
+                   <pre><code>transcribe DNA to RNA</code></pre>
+                   <p>○ Transcribes DNA into RNA.</p>
+
+                   <pre><code>translate RNA to protein</code></pre>
+                   <p>○ Translates RNA into protein.</p>
+
+                   <pre><code>mutate at position to ""</code></pre>
+                   <p>○ Introduces a mutation at the specified position.</p>
+
+                   <pre><code>generate random sequence of length</code></pre>
+                   <p>○ Generates a random DNA sequence.</p>
+               </div>
+
+               <div class="article" id="three">
+                <h2>Version 0.0.3</h2>
+                 <h3>Rebrand --> GeneLang</h3>
+             </div>
+
+              </div>
+              <div class="scroll-links">
+                <a href="spotlight.html#one">1</a>
+                <a href="spotlight.html#two">2</a>
+                <a href="spotlight.html#three">3</a>
+              </div>
+            </div>
+
+          </div>
+        </main>
+
+        <main class="contact-us" id="contact">
+          <div class="links">
+            <p>-</p>
+            <a href="mailto:arnavsharma.0914@gmail.com"><img src="static/email.png" alt=""></a>
+            <p>-</p>
+          </div>
+          <p>© 2024 by GeneLang.</p>
+        </main>
+
+      </div>
+    </div>
+  </body>
+</html>
