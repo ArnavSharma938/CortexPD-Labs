@@ -1,2 +1,2 @@
-# GeneLangSite
-The website for GeneLang
+# CortexPD-Labs
+The website for CortexPD-Labs
