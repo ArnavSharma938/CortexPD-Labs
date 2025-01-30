@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <title>CortexPD Labs</title>
     <link rel="icon" type="image/x-icon" href="/static/logo.png">
-    <script defer type="module" src="index.js"></script>
+    <script defer type="module" src="../index.js"></script>
 
     <link href="./output.css" rel="stylesheet">
 
@@ -127,8 +127,8 @@
       }
 
       .faculty-card {
-        width: 1400px;
-        height: 150px;
+        width: 250px;
+        height: 250px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -136,8 +136,8 @@
         background-color: #d3d3d3;
         border-radius: 8px;
         padding: 1rem;
-        text-align: left;
-        overflow: hidden; 
+        text-align: center;
+        overflow: hidden;
       }
       .faculty-card img {
         border-radius: 50%;
@@ -154,7 +154,7 @@
       }
       .faculty-card h4 {
         font-size: 0.85rem;
-        color: #d9d9d9;
+        color: #000;
         margin-top: 0.25rem;
       }
       .faculty-card p {
@@ -208,7 +208,7 @@
     </div>
 
     <div class="logo-container">
-      <a href="index.html" style="text-decoration: none;">
+      <a href="../index.html" style="text-decoration: none;">
         <img src="public/static/logo.png" alt="Logo">
       </a>
     </div>
@@ -216,9 +216,8 @@
     <div class="wrapper px-20">
       <div
         class="bottom-left-text"
-        style="position: absolute; top: 50px; margin-left: 70px;"
-      >
-        Open Positions
+        style="position: absolute; top: 50px; margin-left: 70px;">
+        Meet Our Faculty
       </div>
 
       <p
@@ -228,54 +227,63 @@
 
         <div
         class="faculty-section"
-        style="position: absolute; top: 500px; left: 150px; right: 70px; margin-bottom: 100px;"
-        >
+        style="position: absolute;top: 500px;left: 150px;right: 70px;margin-bottom: 100px;">
         <div class="flex flex-row flex-wrap gap-8 mb-8">
-            <div 
-            class="faculty-card"
-            style="width: 1400px; height: 150px; background-color: #d3d3d3; border-radius: 8px; overflow: hidden; position: relative; display: flex; align-items: center; padding: 20px; justify-content: space-between;"
-            >
-            <div style="text-align: left; display: flex; flex-direction: column; justify-content: center; height: 100%;">
-                <h3 style="position: relative; right: 430px; font-size: 1.5rem; font-family: 'IBM Plex Sans', sans-serif; font-weight: 300; color: #000; margin-bottom: 10px;">
-                Researcher
-                </h3>
-                <p style="font-size: 1rem; color: #000; font-family: 'IBM Plex Sans', sans-serif;position: relative; right: 430px;">
-                Specialize in statistical biology and the interpretation of model results.
+            <div class="faculty-card">
+            <h3>Arnav Sharma</h3>
+            <h4>President</h4>
+            <p>
+                Arnav Sharma founded this lab and its vision, with his
+                experience in computational biology, he oversees the entire lab
+            </p>
+            </div>
+
+            <div class="faculty-card">
+            <h3>Samarth Dunakhe</h3>
+            <h4>Research Lead</h4>
+            <p>
+                Samarth Dunakhe is an experienced researcher with
+                institutions such as the Einstein Lab and UC Davis
+            </p>
+            </div>
+
+            <div class="faculty-card">
+            <h3>Aryav Das</h3>
+            <h4>Communications Lead</h4>
+            <p>
+                Aryav himself has biological research experience
+                with Indiana University and handles all communications
+            </p>
+            </div>
+
+            <div class="faculty-card">
+            <h3>Avish Bhaskar</h3>
+            <h4>Financial Lead</h4>
+            <p>
+                Avish Bhaskar has a background in finance through part-time
+                financial work in billion dollar companies
+            </p>
+            </div>
+
+            <a href="https://tally.so/r/w2lkD9" class="faculty-card" style="background-color: #8d8d8d;">
+                <h3>You?</h3>
+                <h4>Computational Researcher</h4>
+                <p>
+                    Specialize in computational biology research understanding
+                    frameworks from Machine Learning to Molecular Docking
                 </p>
-            </div>
-            <a 
-                href="https://tally.so/r/w2lkD9" 
-                style="position: absolute; right: 80px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; padding: 20px 40px; font-size: 1.2rem; font-family: 'IBM Plex Sans', sans-serif; background-color: #000; color: white; border-radius: 8px; text-decoration: none; transition: 0.3s; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='#333';" 
-                onmouseout="this.style.backgroundColor='#000';"
-            >
-                Apply Now
             </a>
-            </div>
         </div>
 
         <div class="flex flex-row flex-wrap gap-8" style="margin-top: 60px;">
-            <div 
-            class="faculty-card"
-            style="width: 1400px; height: 150px; background-color: #d3d3d3; border-radius: 8px; overflow: hidden; position: relative; display: flex; align-items: center; padding: 20px; justify-content: space-between;"
-            >
-            <div style="text-align: left; display: flex; flex-direction: column; justify-content: center; height: 100%;">
-                <h3 style="right: 380px; position: relative; font-size: 1.5rem; font-family: 'IBM Plex Sans', sans-serif; font-weight: 300; color: #000; margin-bottom: 10px;">
-                Lead
-                </h3>
-                <p style="font-size: 1rem; color: #000; font-family: 'IBM Plex Sans', sans-serif; right: 380px; position: relative;">
-                Email us if you believe you can contribute to our team in a way that we haven't listed.
+            <a href="https://tally.so/r/w2lkD9" class="faculty-card" style="background-color: #8d8d8d;">
+                <h3>You?</h3>
+                <h4>Biological Researcher</h4>
+                <p>
+                    Specialize in statistical biology and the interpretation of
+                    model results
                 </p>
-            </div>
-            <a 
-                href="cortexpd@gmail.com" 
-                style="position: absolute; right: 80px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; padding: 20px 40px; font-size: 1.2rem; font-family: 'IBM Plex Sans', sans-serif; background-color: #000; color: white; border-radius: 8px; text-decoration: none; transition: 0.3s; cursor: pointer;"
-                onmouseover="this.style.backgroundColor='#333';" 
-                onmouseout="this.style.backgroundColor='#000';">
-                Apply Now
             </a>
-            </div>
-        </div>
         </div>
     </div>
   </body>

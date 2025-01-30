@@ -21,7 +21,7 @@ let thing;
 
 const loader = new GLTFLoader();
 loader.load(
-  "public/static/out.glb",
+  "static/out.glb",
   function (gltf) {
     const model = gltf.scene;
     model.scale.set(1.3, 1.3, 1.3);
