@@ -42,6 +42,40 @@
         height: clamp(40px, 5vw, 60px);
       }
 
+      .header-text-desktop {
+        display: none;
+      }
+
+      .header-text-mobile {
+        display: block;
+      }
+
+      @media (min-width: 768px) {
+        .header-text-desktop {
+          display: block;
+        }
+        .header-text-mobile {
+          display: none;
+        }
+      }
+
+      .sub-text-desktop {
+        display: none;
+      }
+
+      .sub-text-mobile {
+        display: block;
+      }
+
+      @media (min-width: 768px) {
+        .sub-text-desktop {
+          display: block;
+        }
+        .sub-text-mobile {
+          display: none;
+        }
+      }
+
       .right-line-container {
         position: fixed;
         top: 0;
@@ -243,20 +277,32 @@
     </div>
 
     <div class="wrapper px-4 md:px-20">
-      <div class="bottom-left-text" style="position: absolute; top: 210px;  margin-left: 30px;">
-        <span>Interpretable AI for</span><br>
-        <span>Neurodegenerative</span><br>
-        <span>Diseases</span>
+      <div class="bottom-left-text" style="position: absolute; top: 210px; margin-left: 30px;">
+        <div class="header-text-desktop">
+          <span>Interpretable AI for</span><br>
+          <span>Neurodegenerative</span><br>
+          <span>Diseases</span>
+        </div>
+        <div class="header-text-mobile">
+          <span>AI for</span><br>
+          <span>Neurodegenerative</span><br>
+          <span>Diseases</span>
+        </div>
       </div>
 
       <div class="sub-text" style="margin-top: 100px;">
         <div style="display: flex; align-items: center; gap: 1vh;">
-          <div>
+          <div class="sub-text-desktop">
             <span style="color: white;">CortexPD Labs is a community of dedicated </span>
             <span style="color: #DB80FF; text-decoration: underline; text-decoration-color: #DB80FF;">Research</span>
             <span style="color: white;">scientists dedicated</span><br>
             <span style="color: white;">to conquer neurodegenerative diseases such as</span>
             <span style="color: #DB80FF; text-decoration: underline; text-decoration-color: #DB80FF;">Parkinson's</span>
+          </div>
+          <div class="sub-text-mobile">
+            <span style="color: white;">CortexPD is dedicated to</span><br>
+            <span style="color: white;">neurodegenerative disease</span><br>
+            <span style="color: white;">research</span>
           </div>
           <div>
             <a href="https://hcb.hackclub.com/donations/start/neurocatalyst" target="_blank">
