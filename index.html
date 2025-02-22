@@ -138,7 +138,6 @@
           height: 80px !important;
         }
 
-        /* Publication boxes mobile styling */
         [style*="display: flex;justify-content: space-between;padding: 20px 15% 20px 3%;margin-top: 20px;"] {
           padding: 10px 3% !important;
           gap: 10px !important;
@@ -153,7 +152,6 @@
           border-radius: 15px !important;
         }
 
-        /* Hide publication box images on mobile */
         [style*="width: 550px; background-color: #a5a5a5;"] img {
           display: none !important;
         }
@@ -167,17 +165,14 @@
           font-size: 14px !important;
         }
 
-        /* Hide horizontal lines on mobile */
         hr {
           display: none !important;
         }
 
-        /* Additional margin for the second publication box image on mobile */
         div[style*="width: 550px"]:nth-of-type(2) img {
           margin-top: 20px !important;
         }
 
-        /* Hide "We are Neurocatalyst" text on mobile */
         p[style*="font-size: 12px"] {
           display: none !important;
         }
@@ -235,6 +230,25 @@
         font-weight: 300;
         font-size: clamp(20px, 2.5vw, 30px);
         color: white;
+        display: none;
+      }
+
+      @media (min-width: 768px) {
+        .sub-text {
+          display: block;
+        }
+      }
+
+      .right-line-container {
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        height: 100vh;
+        width: clamp(15%, 18%, 20%);
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 4;
       }
     </style>
   </head>
@@ -284,9 +298,8 @@
           <span>Diseases</span>
         </div>
         <div class="header-text-mobile">
-          <span>AI for</span><br>
           <span>Neurodegenerative</span><br>
-          <span>Diseases</span>
+          <span>Diseases AI</span><br>
         </div>
       </div>
 
