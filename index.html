@@ -250,6 +250,27 @@
         align-items: center;
         z-index: 4;
       }
+
+      .donate-button {
+        padding: 10px 20px;
+        width: 160px;
+        background-color: rgba(219, 128, 255, 0.3);
+        color: white;
+        border: 2px solid #DB80FF;
+        border-radius: 15px;
+        cursor: pointer;
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-responsive {
+        @media (max-width: 768px) {
+          padding: 8px 16px !important;
+          font-size: 14px !important;
+          width: 120px !important;
+        }
+      }
     </style>
   </head>
   <body class="min-h-screen bg-black text-white font-['IBM_Plex_Sans'] leading-relaxed antialiased">
@@ -299,7 +320,7 @@
         </div>
         <div class="header-text-mobile">
           <span>Neurodegenerative</span><br>
-          <span>Diseases AI</span><br>
+          <span>Disease AI</span><br>
         </div>
       </div>
 
@@ -319,19 +340,9 @@
           </div>
           <div>
             <a href="https://hcb.hackclub.com/donations/start/neurocatalyst" target="_blank">
-              <button style="
-                padding: 10px 20px;
-                width: 160px;
-                background-color: rgba(219, 128, 255, 0.3);
-                color: white;
-                border: 2px solid #DB80FF;
-                border-radius: 15px;
-                cursor: pointer;
-                font-family: 'IBM Plex Sans', sans-serif;
-                font-size: 16px;
-                transition: all 0.3s ease;
-              " onmouseover="this.style.backgroundColor='rgba(219, 128, 255, 0.5)'" 
-                 onmouseout="this.style.backgroundColor='rgba(219, 128, 255, 0.3)'">
+              <button class="donate-button mobile-responsive" 
+                onmouseover="this.style.backgroundColor='rgba(219, 128, 255, 0.5)'" 
+                onmouseout="this.style.backgroundColor='rgba(219, 128, 255, 0.3)'">
                 Donate
               </button>
             </a>
