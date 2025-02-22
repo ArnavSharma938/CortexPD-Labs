@@ -11,6 +11,7 @@
     </script>
 
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CortexPD Labs</title>
     <link rel="icon" type="image/x-icon" href="/static/logo.png">
     <script defer type="module"></script>
@@ -29,26 +30,16 @@
         overflow-x: hidden;
       }
 
-      .vertical-rectangle {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 90px;
-        height: 100vh;
-        background-color: rgb(0, 0, 0);
-        z-index: 5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      .logo-container {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        z-index: 10;
       }
 
-      .vertical-rectangle .text-center {
-        font-family: 'IBM Plex Sans', sans-serif;
-        font-size: 1.2rem;
-        color: white;
-        writing-mode: vertical-rl;
-        text-align: center;
-        transform: none;
+      .logo-container img {
+        width: clamp(40px, 5vw, 60px);
+        height: clamp(40px, 5vw, 60px);
       }
 
       .right-line-container {
@@ -92,18 +83,6 @@
         z-index: 3;
       }
 
-      .logo-container {
-        position: fixed;
-        top: 16px;
-        left: 16px;
-        z-index: 10;
-      }
-
-      .logo-container img {
-        width: 60px;
-        height: 60px;
-      }
-
       .bottom-left-text {
         margin-top: 100px;
         font-family: 'IBM Plex Sans', sans-serif;
@@ -127,49 +106,97 @@
       }
 
       .faculty-card {
-        width: 250px;
-        height: 250px;
+        width: clamp(250px, 30vw, 350px);
+        height: clamp(250px, 30vw, 350px);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         background-color: #d3d3d3;
         border-radius: 8px;
-        padding: 1rem;
+        padding: clamp(1rem, 2vw, 2rem);
         text-align: center;
         overflow: hidden;
+        transition: transform 0.3s ease;
       }
+
+      .faculty-card:hover {
+        transform: translateY(-5px);
+      }
+
       .faculty-card img {
         border-radius: 50%;
-        width: 70px;
-        height: 70px;
+        width: clamp(50px, 8vw, 70px);
+        height: clamp(50px, 8vw, 70px);
         object-fit: cover;
       }
+
       .faculty-card h3 {
-        font-size: 1.1rem;
+        font-size: clamp(1rem, 1.5vw, 1.1rem);
         margin-top: 0.5rem;
         font-family: 'IBM Plex Sans', sans-serif;
         font-weight: 300;
         color: #000;
       }
+
       .faculty-card h4 {
-        font-size: 0.85rem;
+        font-size: clamp(0.8rem, 1.2vw, 0.85rem);
         color: #000;
         margin-top: 0.25rem;
       }
+
       .faculty-card p {
-        font-size: 0.75rem;
+        font-size: clamp(0.7rem, 1vw, 0.75rem);
         margin-top: 0.5rem;
         color: #000;
         font-family: 'IBM Plex Sans', sans-serif;
+        line-height: 1.4;
+      }
+
+      .faculty-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(1rem, 2vw, 2rem);
+        justify-content: center;
+        padding: clamp(1rem, 3vw, 3rem);
+      }
+
+      @media (max-width: 768px) {
+        .faculty-section {
+          padding: 1rem;
+          margin-top: 60px;
+        }
+
+        .faculty-card {
+          width: 100%;
+          max-width: 300px;
+          height: auto;
+          min-height: 200px;
+          margin: 0 auto;
+        }
+
+        .bottom-left-text {
+          font-size: 2rem;
+          margin-left: 40px;
+        }
+
+        .sub-text {
+          font-size: 1rem;
+          margin-left: 40px;
+          max-width: 90%;
+        }
+
+        .flex-wrap {
+          justify-content: center;
+        }
       }
     </style>
   </head>
   <body class="min-h-screen bg-black text-white font-['IBM_Plex_Sans'] leading-relaxed antialiased">
-    <div class="vertical-rectangle">
-      <div class="text-center">
-        CortexPD Labs
-      </div>
+    <div class="logo-container">
+      <a href="../index.html" style="text-decoration: none;">
+        <img src="../static/logo.png" alt="Logo">
+      </a>
     </div>
 
     <div class="right-line-background"></div>
@@ -207,27 +234,21 @@
       </div>
     </div>
 
-    <div class="logo-container">
-      <a href="../index.html" style="text-decoration: none;">
-        <img src="../static/logo.png" alt="Logo">
-      </a>
-    </div>
-
     <div class="wrapper px-20">
       <div
         class="bottom-left-text"
-        style="position: absolute; top: 50px; margin-left: 70px;">
+        style="position: absolute; top: 50px; margin-left: -40px;">
         Meet Our Faculty
       </div>
 
       <p
-        style="position: absolute;top: 410px;margin-left: 70px;font-size: 20px;font-family: 'IBM Plex Sans', sans-serif;color: #d9d9d9;max-width: 700px;">
+        style="position: absolute;top: 410px;margin-left: -40px;font-size: 20px;font-family: 'IBM Plex Sans', sans-serif;color: #d9d9d9;max-width: 700px;">
         The researchers that back our mission to revolutionize neurodegenerative disease research
       </p>
 
         <div
         class="faculty-section"
-        style="position: absolute;top: 500px;left: 150px;right: 70px;margin-bottom: 100px;">
+        style="position: absolute;top: 500px;left: -10px;margin-bottom: 100px;">
         <div class="flex flex-row flex-wrap gap-8 mb-8">
             <div class="faculty-card">
             <h3>Arnav Sharma</h3>
@@ -264,14 +285,6 @@
                 financial work in billion dollar companies
             </p>
             </div>
-
-            <a href="https://tally.so/r/w2lkD9" class="faculty-card" style="background-color: #8d8d8d;">
-                <h3>You?</h3>
-                <h4>Researcher</h4>
-                <p>
-                    Specialize in AI, full-stack or UI/UX? Join us!
-                </p>
-            </a>
         </div>
 
     </div>

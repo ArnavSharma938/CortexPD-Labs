@@ -11,6 +11,7 @@
     </script>
 
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CortexPD Labs</title>
     <link rel="icon" type="image/x-icon" href="/static/logo.png">
     <script defer type="module" src="index.js"></script>
@@ -24,28 +25,21 @@
     <style>
       html, body {
         overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        width: 100%;
       }
     
-      .vertical-rectangle {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 90px;
-        height: 100vh;
-        background-color: rgb(0, 0, 0);
-        z-index: 5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      .logo-container {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        z-index: 10;
       }
     
-      .vertical-rectangle .text-center {
-        font-family: 'IBM Plex Sans', sans-serif;
-        font-size: 1.2rem;
-        color: white;
-        writing-mode: vertical-rl;
-        text-align: center;
-        transform: none;
+      .logo-container img {
+        width: clamp(40px, 5vw, 60px);
+        height: clamp(40px, 5vw, 60px);
       }
     
       .right-line-container {
@@ -54,7 +48,7 @@
         right: 0;
         display: flex;
         height: 100vh;
-        width: 18%;
+        width: clamp(15%, 18%, 20%);
         justify-content: space-evenly;
         align-items: center;
         z-index: 4;
@@ -72,11 +66,12 @@
         color: #DB80FF;
         font-family: 'IBM Plex Sans', sans-serif;
         font-weight: 300;
-        font-size: 22px;
+        font-size: clamp(16px, 1.5vw, 22px);
         transform: rotate(90deg);
         top: 50%;
         left: -40px;
         transform-origin: left center;
+        white-space: nowrap;
       }
     
       .right-line-background {
@@ -84,37 +79,25 @@
         top: 0;
         right: 0;
         height: 100vh;
-        width: 13.5%;
+        width: clamp(10%, 13.5%, 15%);
         background-color: black;
         z-index: 3;
       }
     
-      .logo-container {
-        position: fixed;
-        top: 16px;
-        left: 16px;
-        z-index: 10;
-      }
-    
-      .logo-container img {
-        width: 60px;
-        height: 60px;
-      }
-    
       .bottom-left-text {
-        margin-top: 100px;
+        margin-top: clamp(60px, 10vh, 100px);
         font-family: 'IBM Plex Sans', sans-serif;
         font-weight: 300;
-        font-size: 60px;
+        font-size: clamp(32px, 5vw, 60px);
         color: #DB80FF;
       }
     
       .sub-text {
-        margin-top: 200px;
-        margin-left: 80px;
+        margin-top: clamp(100px, 20vh, 200px);
+        margin-left: clamp(40px, 5vw, 80px);
         font-family: 'IBM Plex Sans', sans-serif;
         font-weight: 300;
-        font-size: 30px;
+        font-size: clamp(20px, 2.5vw, 30px);
         color: white;
       }
 
@@ -131,15 +114,50 @@
         transition: all 0.8s ease;
       }
 
+      @media (max-width: 768px) {
+        .right-line-container {
+          width: 25%;
+        }
+        
+        .right-line-text {
+          font-size: 14px;
+          left: -30px;
+        }
+
+        .wrapper {
+          padding: 10px;
+        }
+
+        .bottom-left-text {
+          margin-left: 40px;
+        }
+
+        .sub-text {
+          margin-left: 40px;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .publications-container {
+          flex-direction: column;
+          padding: 20px 5%;
+        }
+
+        .publication-card {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+
     </style>
   </head>
   <body class="min-h-screen bg-black text-white font-['IBM_Plex_Sans'] leading-relaxed antialiased">
     <canvas id="myCanvas" class="absolute top-0 left-0 w-full h-full z-[-10] opacity-100"></canvas>
   
-    <div class="vertical-rectangle">
-      <div class="text-center">
-        CortexPD Labs
-      </div>
+    <div class="logo-container">
+      <a href="index.html" style="text-decoration: none;">
+        <img src="public/static/logo.png" alt="Logo">
+      </a>
     </div>
   
     <div class="right-line-background"></div>
@@ -171,21 +189,15 @@
       </div>  
     </div>
 
-    <div class="logo-container">
-      <a href="index.html" style="text-decoration: none;">
-        <img src="public/static/logo.png" alt="Logo">
-      </a>
-    </div>    
-
     <div class="wrapper px-20">
-      <div class="bottom-left-text" style="position: absolute; top: 210px;  margin-left: 70px;">
+      <div class="bottom-left-text" style="position: absolute; top: 210px;  margin-left: 30px;">
         <span>Interpretable AI for</span><br>
         <span>Neurodegenerative</span><br>
         <span>Diseases</span>
       </div>
 
       <div class="sub-text" style="margin-top: 100px;">
-        <div style="display: flex; align-items: center; gap: 200px;">
+        <div style="display: flex; align-items: center; gap: 1vh;">
           <div>
             <span style="color: white;">CortexPD Labs is a community of dedicated </span>
             <span style="color: #DB80FF; text-decoration: underline; text-decoration-color: #DB80FF;">Research</span>
@@ -217,13 +229,13 @@
       </div>
 
       <div style="margin-top: 100px; text-align: center;">
-        <hr style="position: relative;border: none;height: 1px;background-color: #333;margin: 0 auto;right: 105px;width: 78%;">
+        <hr style="position: relative;border: none;height: 1px;background-color: #333;margin: 0 auto;right: 150px;width: 78%;">
 
-        <div style="margin-top: 20px;font-family: 'IBM Plex Sans', sans-serif;font-size: 20px;color: white;padding-left: 5%; text-align: left;">
+        <div style="margin-top: 20px;font-family: 'IBM Plex Sans', sans-serif;font-size: 20px;color: white;padding-left: 3%; text-align: left;">
           Publications
         </div>
 
-        <div style="display: flex;justify-content: space-between;padding: 20px 15% 20px 5%;margin-top: 20px;">
+        <div style="display: flex;justify-content: space-between;padding: 20px 15% 20px 3%;margin-top: 20px;">
           <div style="width: 550px; background-color: #a5a5a5; display: flex; flex-direction: column; padding: 20px; align-items: flex-start;">
             <div style="display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 15px;">
               <p style="color: #000; font-family: 'IBM Plex Sans', sans-serif; font-size: 20px; text-align: left; margin-bottom: 10px;">
@@ -255,13 +267,13 @@
 
 
       <div style="margin-top: 100px; text-align: center;">
-        <hr style="position: relative;border: none;height: 1px;background-color: #333;margin: 0 auto;right: 105px;width: 78%;">
+        <hr style="position: relative;border: none;height: 1px;background-color: #333;margin: 0 auto;right: 150px;width: 78%;">
 
-        <div style="margin-top: 20px;font-family: 'IBM Plex Sans', sans-serif;font-size: 20px;color: white;padding-left: 5%; text-align: left;">
+        <div style="margin-top: 20px;font-family: 'IBM Plex Sans', sans-serif;font-size: 20px;color: white;padding-left: 3%; text-align: left;">
           Backed By Top Research Institutions
         </div>
 
-        <div style="display: flex; justify-content: flex-start; margin-left: 4%; margin-top: 30px; margin-bottom: 50px;">
+        <div style="display: flex; justify-content: flex-start; margin-left: 3%; margin-top: 30px; margin-bottom: 50px;">
           <img src="public/static/image 1.png" alt="UC Davis" style="width: 200px; height: 200px; object-fit: cover; margin-right: 25px; margin-bottom: 20px;">
           <img src="public/static/Occidental.webp" alt="Occidental College" style="width: 190px; height: 190px; object-fit: cover; margin-right: 25px; margin-bottom: 20px;">
           <img src="public/static/dasdasd.png" alt="ALS Therapy Development Institute" style="width: 190px; height: 190px; object-fit: cover; margin-right: 25px; margin-bottom: 20px; background-color: white; padding: 10px;">

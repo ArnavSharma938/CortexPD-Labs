@@ -11,6 +11,7 @@
     </script>
 
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CortexPD Labs</title>
     <link rel="icon" type="image/x-icon" href="/static/logo.png">
     <script defer type="module"></script>
@@ -24,28 +25,21 @@
     <style>
       html, body {
         overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        width: 100%;
       }
     
-      .vertical-rectangle {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 90px;
-        height: 100vh;
-        background-color: rgb(0, 0, 0);
-        z-index: 5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      .logo-container {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        z-index: 10;
       }
     
-      .vertical-rectangle .text-center {
-        font-family: 'IBM Plex Sans', sans-serif;
-        font-size: 1.2rem;
-        color: white;
-        writing-mode: vertical-rl;
-        text-align: center;
-        transform: none;
+      .logo-container img {
+        width: clamp(40px, 5vw, 60px);
+        height: clamp(40px, 5vw, 60px);
       }
     
       .right-line-container {
@@ -54,7 +48,7 @@
         right: 0;
         display: flex;
         height: 100vh;
-        width: 18%;
+        width: clamp(15%, 18%, 20%);
         justify-content: space-evenly;
         align-items: center;
         z-index: 4;
@@ -72,11 +66,12 @@
         color: #DB80FF;
         font-family: 'IBM Plex Sans', sans-serif;
         font-weight: 300;
-        font-size: 22px;
+        font-size: clamp(16px, 1.5vw, 22px);
         transform: rotate(90deg);
         top: 50%;
         left: -40px;
         transform-origin: left center;
+        white-space: nowrap;
       }
     
       .right-line-background {
@@ -84,37 +79,25 @@
         top: 0;
         right: 0;
         height: 100vh;
-        width: 13.5%;
+        width: clamp(10%, 13.5%, 15%);
         background-color: black;
         z-index: 3;
       }
     
-      .logo-container {
-        position: fixed;
-        top: 16px;
-        left: 16px;
-        z-index: 10;
-      }
-    
-      .logo-container img {
-        width: 60px;
-        height: 60px;
-      }
-    
       .bottom-left-text {
-        margin-top: 100px;
+        margin-top: clamp(60px, 10vh, 100px);
         font-family: 'IBM Plex Sans', sans-serif;
         font-weight: 300;
-        font-size: 60px;
+        font-size: clamp(32px, 5vw, 60px);
         color: #DB80FF;
       }
     
       .sub-text {
-        margin-top: 200px;
-        margin-left: 80px;
+        margin-top: clamp(100px, 20vh, 200px);
+        margin-left: clamp(40px, 5vw, 80px);
         font-family: 'IBM Plex Sans', sans-serif;
         font-weight: 300;
-        font-size: 30px;
+        font-size: clamp(20px, 2.5vw, 30px);
         color: white;
       }
 
@@ -122,17 +105,91 @@
         transform: rotate(90deg) translateX(20px);
         color: #d9d9d9;
       }
+
+      .research-card {
+        width: clamp(300px, 80vw, 1400px);
+        height: auto;
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        background-color: #d3d3d3;
+        border-radius: 8px;
+        padding: clamp(1rem, 2vw, 2rem);
+        text-align: left;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.3s ease;
+        margin-bottom: 2rem;
+      }
+
+      .research-card:hover {
+        transform: translateY(-2px);
+      }
+
+      .research-card h3 {
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-weight: 300;
+        color: #000;
+        margin-bottom: 10px;
+      }
+
+      .research-card p {
+        font-size: clamp(0.9rem, 1.5vw, 1rem);
+        color: #000;
+        font-family: 'IBM Plex Sans', sans-serif;
+        max-width: 60%;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 768px) {
+        .right-line-container {
+          width: 25%;
+        }
+        
+        .right-line-text {
+          font-size: 14px;
+          left: -30px;
+        }
+
+        .wrapper {
+          padding: 10px;
+        }
+
+        .bottom-left-text {
+          margin-left: 40px;
+          font-size: 2rem;
+        }
+
+        .sub-text {
+          margin-left: 40px;
+          font-size: 1rem;
+          max-width: 90%;
+        }
+
+        .research-card {
+          width: 90%;
+          margin: 1rem auto;
+          padding: 1.5rem;
+        }
+
+        .research-card p {
+          max-width: 100%;
+        }
+      }
     </style>
   </head>
   <body class="min-h-screen bg-black text-white font-['IBM_Plex_Sans'] leading-relaxed antialiased">
-    <div class="vertical-rectangle">
-      <div class="text-center">
-        CortexPD Labs
-      </div>
+    <div class="logo-container">
+      <a href="../index.html" style="text-decoration: none;">
+        <img src="../static/logo.png" alt="Logo">
+      </a>
     </div>
-  
+
     <div class="right-line-background"></div>
-  
+
     <div class="right-line-container">
       <div class="right-line">
         <a href="research.html" style="text-decoration: none;">
@@ -160,78 +217,54 @@
       </div>  
     </div>
 
-    <div class="logo-container">
-      <a href="../index.html" style="text-decoration: none;">
-        <img src="../static/logo.png" alt="Logo">
-      </a>
-    </div>    
-
     <div class="wrapper px-20">
-    <div class="bottom-left-text" style="position: absolute; top: 50px; margin-left: 70px;">
-        Towards Computational Parkinson's
-    </div>
-    
-    <p style="position: absolute;top: 410px;margin-left: 70px;font-size: 20px;font-family: 'IBM Plex Sans', sans-serif;color: #d9d9d9;max-width: 700px">
-        A research lab partnered with top research institutions such as UC Davis utilizing molecular biology and machine learning to uncover insights into Parkinson's pathogenesis, therapeutics, and more.
-    </p>
+      <div class="bottom-left-text" style="position: absolute; top: 50px; margin-left: -40px;">
+        Our Research
+      </div>
 
-    <div style="display: flex;justify-content: center;align-items: flex-start;gap: 40px;margin-top: 50px;margin-left: -550px;">
-    <div style="text-align: center;">
-        <a href="https://github.com/CortexPD" target="_blank" style="font-size: 20px;font-family: 'IBM Plex Sans', sans-serif;color: white;text-decoration: none;transition: color 0.3s ease;position: relative;left: 430px;
-        " onmouseover="this.style.color='#DB80FF';" onmouseout="this.style.color='white';">
-        Code
-        </a>
-    </div>
+      <p style="position: absolute; top: 410px; margin-left: -40px; font-size: 20px; font-family: 'IBM Plex Sans', sans-serif; color: #d9d9d9; max-width: 700px;">
+        Pioneering research in neurodegenerative diseases using AI and computational biology
+      </p>
 
-    <div style="text-align: center;">
-        <a href="https://docs.google.com/document/d/1lg-rrcZJb1MxYJ6GDelABk9VksSIzfDGV7abW6NImi4/edit?usp=sharing" target="_blank" style="display: inline-block;padding: 0 10px;font-size: 20px;font-family: 'IBM Plex Sans', sans-serif;white-space: nowrap;color: white;text-decoration: none;transition: color 0.3s ease;position: relative;left: 430px;
-        " onmouseover="this.style.color='#DB80FF';" onmouseout="this.style.color='white';">
-        What's Next
-        </a>
-    </div>    
+      <div class="research-section" style="position: absolute; top: 500px; left: 40px; margin-bottom: 100px;">
+        <div class="research-card">
+          <h3>AI-Driven Interactive Parkinson's Disease Progression Atlas (PD-Atlas)</h3>
+          <p>
+            A comprehensive mapping of Parkinson's Disease progression using advanced AI techniques to understand and predict disease pathways.
+          </p>
+        </div>
 
-    <div style="display: flex;flex-direction: column;gap: 40px;margin-top: 500px;margin-left: 175px;">
-    <div style="width: 90%;height: 350px;background-color: #d3d3d3;display: flex;align-items: center;justify-content: space-between;padding: 20px;border-radius: 10px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
-    <div style="position: relative; flex-shrink: 0;">
-    <img src="static/Receptor.png" alt="Image" style="width: 450px; height: 300px; object-fit: cover; border-radius: 5px;">
-    <strong style="font-family: 'IBM Plex Sans', sans-serif;font-size: 18px;color: white;position: absolute;bottom: 10px;right: 10px;background-color: rgba(0, 0, 0, 0.7);padding: 5px 10px;border-radius: 5px;">
-        Biomarker Discovery
-    </strong>
-    </div>
-    <div style="font-family: 'IBM Plex Sans', sans-serif;font-size: 18px;color: #000;text-align: center;flex: 1;">
-    A Neuro-Spatial Discovery of ALS Biomarkers Using Graph Neural Networks With Applications to Multi-Target Drug Discovery
-    <div style="margin-top: 20px;">
-      <a href="https://drive.google.com/drive/folders/1HgBIp6xx0IPQkQX9k5rKnBSkfzE9qeA4?usp=sharing" target="_blank" rel="noopener noreferrer">
-        <button style="padding: 10px 20px; background-color: rgba(0, 0, 0, 0.7); color: white; border: 1px solid #8b8b8b; border-radius: 15px; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;">
-          Continue
-        </button>
-      </a>
-    </div>
-    </div>
-    </div>
+        <div class="research-card">
+          <h3>Neuro-Spatial Discovery of ALS Biomarkers</h3>
+          <p>
+            Using Graph Neural Networks to identify and analyze biomarkers in ALS, with applications to multi-target drug discovery.
+          </p>
+          <a 
+            href="https://drive.google.com/drive/folders/1HgBIp6xx0IPQkQX9k5rKnBSkfzE9qeA4?usp=sharing" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style="
+              display: inline-block;
+              margin-top: 15px;
+              padding: 10px 20px;
+              background-color: rgba(0, 0, 0, 0.7);
+              color: white;
+              border: 1px solid #8b8b8b;
+              border-radius: 15px;
+              cursor: pointer;
+              font-family: 'IBM Plex Sans', sans-serif;
+              font-size: 16px;
+              transition: all 0.3s ease;
+              text-decoration: none;
+            "
+            onmouseover="this.style.backgroundColor='rgba(0, 0, 0, 0.9)'"
+            onmouseout="this.style.backgroundColor='rgba(0, 0, 0, 0.7)'"
+          >
+            View Research
+          </a>
+        </div>
 
-    <div style="width: 90%;height: 350px;background-color: #d3d3d3;display: flex;align-items: center;justify-content: space-between;padding: 20px;border-radius: 10px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
-    <div style="position: relative; flex-shrink: 0;">
-    <img src="static/Therapeutic.png" alt="Image" style="width: 450px; height: 300px; object-fit: cover; border-radius: 5px;">
-    <strong style="font-family: 'IBM Plex Sans', sans-serif;font-size: 18px;color: white;position: absolute;bottom: 10px;right: 10px;background-color: rgba(0, 0, 0, 0.7);padding: 5px 10px;border-radius: 5px;">
-        Progression Modeling
-    </strong>
-    </div>
-    <div style="font-family: 'IBM Plex Sans', sans-serif;font-size: 18px;color: #000;text-align: center;flex: 1;">
-    Accelerate patient-specific solutions to Parkinson's using computational modeling
-    <div style="margin-top: 20px;">
-      <a href="#" target="_blank" rel="noopener noreferrer">
-        <button style="padding: 10px 20px; background-color: rgba(0, 0, 0, 0.7); color: white; border: 1px solid #8b8b8b; border-radius: 15px; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;">
-          Coming Soon
-        </button>
-      </a>
-    </div>
-    </div>
-    </div>
 
     </div>
-
- 
-
   </body>
 </html>
