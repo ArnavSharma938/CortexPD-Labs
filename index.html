@@ -36,12 +36,12 @@
         left: 16px;
         z-index: 10;
       }
-    
+
       .logo-container img {
         width: clamp(40px, 5vw, 60px);
         height: clamp(40px, 5vw, 60px);
       }
-    
+
       .right-line-container {
         position: fixed;
         top: 0;
@@ -52,6 +52,101 @@
         justify-content: space-evenly;
         align-items: center;
         z-index: 4;
+      }
+
+      @media (max-width: 1023px) {
+        .right-line-container,
+        .right-line,
+        .right-line-background {
+          display: none !important;
+        }
+        
+        .wrapper {
+          padding-left: 0.5rem !important;
+          padding-right: 0.5rem !important;
+        }
+
+        #myCanvas {
+          display: none !important;
+        }
+
+        .bottom-left-text {
+          margin-left: 0px !important;
+          font-size: 42px !important;
+          position: relative !important;
+          top: 30px !important;
+          text-align: left !important;
+          padding-left: 20px !important;
+        }
+
+        .sub-text {
+          margin-left: 0px !important;
+          font-size: 18px !important;
+          margin-top: 60px !important;
+          padding-left: 20px !important;
+        }
+
+        .sub-text > div {
+          padding-right: 80px !important;
+        }
+
+        .institution-logos {
+          flex-direction: row !important;
+          justify-content: flex-start !important;
+          align-items: center !important;
+          gap: 0.5rem !important;
+          padding-left: 3% !important;
+          flex-wrap: wrap !important;
+        }
+
+        .institution-logos img {
+          width: 80px !important;
+          height: 80px !important;
+        }
+
+        /* Publication boxes mobile styling */
+        [style*="display: flex;justify-content: space-between;padding: 20px 15% 20px 3%;margin-top: 20px;"] {
+          padding: 10px 3% !important;
+          gap: 10px !important;
+          flex-wrap: nowrap !important;
+          overflow-x: auto !important;
+        }
+
+        [style*="width: 550px; background-color: #a5a5a5;"] {
+          width: 300px !important;
+          min-width: 300px !important;
+          padding: 15px !important;
+          border-radius: 15px !important;
+        }
+
+        /* Hide publication box images on mobile */
+        [style*="width: 550px; background-color: #a5a5a5;"] img {
+          display: none !important;
+        }
+
+        [style*="color: #000; font-family: 'IBM Plex Sans', sans-serif; font-size: 20px;"] {
+          font-size: 16px !important;
+        }
+
+        [style*="padding: 10px 20px; background-color: rgba(0, 0, 0, 0.7);"] {
+          padding: 8px 16px !important;
+          font-size: 14px !important;
+        }
+
+        /* Hide horizontal lines on mobile */
+        hr {
+          display: none !important;
+        }
+
+        /* Additional margin for the second publication box image on mobile */
+        div[style*="width: 550px"]:nth-of-type(2) img {
+          margin-top: 20px !important;
+        }
+
+        /* Hide "We are Neurocatalyst" text on mobile */
+        p[style*="font-size: 12px"] {
+          display: none !important;
+        }
       }
     
       .right-line {
@@ -72,6 +167,13 @@
         left: -40px;
         transform-origin: left center;
         white-space: nowrap;
+      }
+
+      @media (max-width: 1024px) {
+        .right-line-text {
+          font-size: 14px;
+          left: -50px;
+        }
       }
     
       .right-line-background {
@@ -100,55 +202,6 @@
         font-size: clamp(20px, 2.5vw, 30px);
         color: white;
       }
-
-      .right-line-text:hover {
-        transform: rotate(90deg) translateX(20px);
-        color: #d9d9d9;
-      }
-
-      #research-line {
-        transition: all 0.8s ease;
-      }
-
-      #research-button {
-        transition: all 0.8s ease;
-      }
-
-      @media (max-width: 768px) {
-        .right-line-container {
-          width: 25%;
-        }
-        
-        .right-line-text {
-          font-size: 14px;
-          left: -30px;
-        }
-
-        .wrapper {
-          padding: 10px;
-        }
-
-        .bottom-left-text {
-          margin-left: 40px;
-        }
-
-        .sub-text {
-          margin-left: 40px;
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        .publications-container {
-          flex-direction: column;
-          padding: 20px 5%;
-        }
-
-        .publication-card {
-          width: 100%;
-          margin-bottom: 20px;
-        }
-      }
-
     </style>
   </head>
   <body class="min-h-screen bg-black text-white font-['IBM_Plex_Sans'] leading-relaxed antialiased">
@@ -189,7 +242,7 @@
       </div>  
     </div>
 
-    <div class="wrapper px-20">
+    <div class="wrapper px-4 md:px-20">
       <div class="bottom-left-text" style="position: absolute; top: 210px;  margin-left: 30px;">
         <span>Interpretable AI for</span><br>
         <span>Neurodegenerative</span><br>
@@ -223,14 +276,11 @@
                 Donate
               </button>
             </a>
-            <p style="font-size: 12px; color: #888; margin-top: 5px; text-align: center;">We are Neurocatalyst</p>
           </div>
         </div>
       </div>
 
       <div style="margin-top: 100px; text-align: center;">
-        <hr style="position: relative;border: none;height: 1px;background-color: #333;margin: 0 auto;right: 150px;width: 78%;">
-
         <div style="margin-top: 20px;font-family: 'IBM Plex Sans', sans-serif;font-size: 20px;color: white;padding-left: 3%; text-align: left;">
           Publications
         </div>
@@ -242,9 +292,7 @@
                 A Neuro-Spatial Discovery of ALS Biomarkers Using Graph Neural Networks With Applications to Multi-Target Drug Discovery
               </p>
               <a href="https://drive.google.com/drive/folders/1HgBIp6xx0IPQkQX9k5rKnBSkfzE9qeA4?usp=sharing" target="_blank" rel="noopener noreferrer">
-                <button style="padding: 10px 20px; background-color: rgba(0, 0, 0, 0.7); color: white; border: 1px solid #8b8b8b; border-radius: 15px; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;">
-                  Continue
-                </button>
+                <button style="padding: 10px 20px; background-color: rgba(0, 0, 0, 0.7); color: white; border: 1px solid #8b8b8b; border-radius: 15px; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;">Read Paper</button>
               </a>              
             </div>
             <img src="public/static/Receptor.png" alt="Glucocorticoid Receptor Alpha Molecular Structure" style="width: 100%; height: auto; object-fit: cover;">
@@ -255,29 +303,26 @@
               <p style="color: #000; font-family: 'IBM Plex Sans', sans-serif; font-size: 20px; text-align: left; margin-bottom: 10px;">
                 AI-Driven Interactive Parkinson's Disease Progression Atlas (PD-Atlas)
               </p>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <button style="padding: 10px 20px; background-color: rgba(0, 0, 0, 0.7); color: white; border: 1px solid #8b8b8b; border-radius: 15px; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;">
-                  Coming Soon
-                </button>
+              <a style="pointer-events: none;">
+                <button style="padding: 10px 20px; background-color: rgba(0, 0, 0, 0.7); color: white; border: 1px solid #8b8b8b; border-radius: 15px; cursor: not-allowed; font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;">Coming Soon</button>
               </a>              
             </div>
-            <img src="public/static/Substantia Nigra.jpeg" alt="The Substantia Nigra in the brain" style="width: 100%; height: auto; object-fit: cover; margin-top: 80px;">
-          </div> 
+            <img src="public/static/Substantia Nigra.jpeg" alt="The Substantia Nigra in the brain" style="width: 100%; height: auto; object-fit: cover;">
+          </div>
         </div>
 
+        <div style="margin-top: 100px; text-align: center;">
+          <hr style="position: relative;border: none;height: 1px;background-color: #333;margin: 0 auto;right: 150px;width: 78%;">
 
-      <div style="margin-top: 100px; text-align: center;">
-        <hr style="position: relative;border: none;height: 1px;background-color: #333;margin: 0 auto;right: 150px;width: 78%;">
+          <div style="margin-top: 20px;font-family: 'IBM Plex Sans', sans-serif;font-size: 20px;color: white;padding-left: 3%; text-align: left;">
+            Backed By Top Research Institutions
+          </div>
 
-        <div style="margin-top: 20px;font-family: 'IBM Plex Sans', sans-serif;font-size: 20px;color: white;padding-left: 3%; text-align: left;">
-          Backed By Top Research Institutions
-        </div>
-
-        <div style="display: flex; justify-content: flex-start; margin-left: 3%; margin-top: 30px; margin-bottom: 50px;">
-          <img src="public/static/image 1.png" alt="UC Davis" style="width: 200px; height: 200px; object-fit: cover; margin-right: 25px; margin-bottom: 20px;">
-          <img src="public/static/Occidental.webp" alt="Occidental College" style="width: 190px; height: 190px; object-fit: cover; margin-right: 25px; margin-bottom: 20px;">
-          <img src="public/static/dasdasd.png" alt="ALS Therapy Development Institute" style="width: 190px; height: 190px; object-fit: cover; margin-right: 25px; margin-bottom: 20px; background-color: white; padding: 10px;">
-        </div>        
+          <div class="institution-logos" style="display: flex; justify-content: flex-start; margin-left: 3%; margin-top: 30px; margin-bottom: 50px;">
+            <img src="public/static/image 1.png" alt="UC Davis" style="width: 200px; height: 200px; object-fit: cover; margin-right: 25px; margin-bottom: 20px;">
+            <img src="public/static/Occidental.webp" alt="Occidental College" style="width: 190px; height: 190px; object-fit: cover; margin-right: 25px; margin-bottom: 20px;">
+            <img src="public/static/dasdasd.png" alt="ALS Therapy Development Institute" style="width: 190px; height: 190px; object-fit: cover; margin-right: 25px; margin-bottom: 20px; background-color: white; padding: 10px;">
+          </div>
     </div>
   </body>
 </html>
